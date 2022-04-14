@@ -20,7 +20,7 @@ end
 
 
 function checkVerticalCollision(a, b)
-   if a.y < b.y + b.height and (a.x < b.x < a.width or a.x > b.x < b.width) or a.y + a.height > b.y and (a.x < b.x < a.width or a.x > b.x < b.width) then
+   if a.y < b.y + b.height and (b.x + b.height > a.x > b.x or b.x + b.height > a.x + a.height > b.x) then
       return true
    else
       return false
