@@ -28,6 +28,9 @@ function Player:move(dt)
    elseif love.keyboard.isDown("d") then
       self.x = self.x + self.speed * dt
    end
+   if love.keyboard.isDown("e") then
+      buildMode()
+   end
 end
 
 
