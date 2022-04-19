@@ -4,9 +4,13 @@ require('map')
 
 
 
+tileHeight = love.graphics.getHeight() / 45
+tileWidth = love.graphics.getWidth() / 80
+
+
+
 function love.load()
    Player:load()
-   Machine:load()
    Map:load()
 end
 
@@ -14,7 +18,6 @@ end
 
 function love.update(dt)
    Player:update(dt)
-   Machine:update(dt)
    Map:update(dt)
 end
 
@@ -22,12 +25,30 @@ end
 
 function love.draw()
    Player:draw()
-   Machine:draw()
    Map:draw()
 end
 
 
 
-function buildMode()
-   
+function initMachine(advanced, b)
+   a.buildThing
+   b.tileGrid[buildPosX][buildPosY] = state, a.buildThing
 end
+
+
+
+function checkUp(a, b)
+   nextYPos = a.yPos + 1 
+   nextXPos = a.xPos
+   if b.tileGrid[nextXPos][nextYPos] == true then
+      return false
+   else
+      return true
+   end
+end
+
+
+
+function wait(time)
+   os.execute("sleep " .. tonumber(time))
+ end
